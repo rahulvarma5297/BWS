@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Module 10</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="button">Generate Character</button>
+      <h1 class="name"></h1>
+      <img src="" class="character-image picture" alt="image" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <script>
+      function fetchAndDisplayData() {
+        const randomNumber = Math.ceil(Math.random() * 100);
+        $.get(
+          `https://rawcdn.githack.com/akabab/starwars-api/0.2.1/api/id/${randomNumber}.json`,
+          function (data) {
+            $("h1.name").text(data["name"]);
+            $(".character-image").attr("src", data["image"]);
+          }
+        );
+      }
+
+      $(document).ready(function () {
+        $("button").on("click", fetchAndDisplayData);
+      });
+
+      window.addEventListener("load", fetchAndDisplayData);
+    </script>
+  </body>
+</html>

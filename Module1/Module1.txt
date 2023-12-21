@@ -1,0 +1,17 @@
+I have a lot of extensions since I'm using VS Code since 3 year's
+and all the extensions are kept in the folder.
+
+New Extension which I downloaded (other all I have already).
+Todo Tree
+Material Theme
+Django Template
+EditorConfig for VS Code
+Markdown Preview Enhanced
+Power Mode
+
+I don't like much Material Theme
+So I kept it disabled.
+
+But I liked Power Mode.
+
+Thank You.

@@ -1,0 +1,116 @@
+a {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:active {
+  color: red;
+}
+
+a:visited {
+  color: yellow;
+}
+
+.car {
+  background-image: url("../images/car.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 200px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.red-border {
+  border-width: 5px;
+  border-style: dashed;
+  border-color: red;
+  border-radius: 10px;
+}
+
+.border-circle {
+  border: 5px solid green;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.border-shape {
+  border: 5px solid green;
+  border-radius: 50% 0 50% 0;
+  width: 200px;
+  height: 200px;
+}
+
+p {
+  display: inline-block;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+
+  /* inline and block */
+  /* Block */
+  /* Inline */
+  /* Inline Block */
+}
+
+
+.vid27{
+  width: 300px;
+  height: 300px;
+  border : 2px solid black;
+
+  background-image: url("../images/car.jpg");
+  background-position: center center;
+  background-size: cover;
+  border-radius: 0 50% 0 50%;
+
+  /* box-shadow: 10px 10px 5px 5px green; */
+  /* first two 10px 10px is for x and y axis */
+  /* 5px is for blur */
+  /* 5px is for spread */
+
+  box-shadow: 10px 10px 5px 5px green inset;
+  /* This is for Inside */
+
+  /* For centering the element */
+  margin: auto;
+  display: block;
+}
+
+.inline{
+  display: inline-block;
+  border: 1px solid black;
+  max-width: 500px;
+}
+
+.vid31{
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+
+  background-image: url("../images/car.jpg");
+  background-position: center center;
+  background-size: cover;
+
+  /* background-color: black; */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: red;
+  text-align: center;
+  padding: 10px;
+
+  opacity: 0.5;
+}
+
+.floating{
+  float: left;
+  margin: 10px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 5px black;
+}

@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+:root {
+  --main-color: #dde0f1;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-position: right bottom;
+  background-size: 100% auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 15px 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 10px #0d2cff78;
+}
+
+.header .logo a {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  display: block;
+  transform: scale(0.9);
+  letter-spacing: 2px;
+  color: #ffce06;
+}
+
+.header .logo a span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #3f5cc3;
+  letter-spacing: 1px;
+  text-align: center;
+  position: relative;
+}
+
+.header .logo a span::before {
+  content: "";
+  position: absolute;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-top: 2px solid #3f5cc3;
+  border-right: 2px solid transparent;
+  border-left: 0px solid transparent;
+}
+
+.header .logo a span::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #3f5cc3;
+  width: 8px;
+  height: 8px;
+  box-shadow: 0px 0px 5px #f4d200;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 9;
+}
+
+.sub-header {
+  left: 0;
+  top: 0;
+  margin-top: 70px;
+  width: 100%;
+  z-index: 2;
+  padding: 15px 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 10px #0d2cff78;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.about-me-content-right {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about-me-content-right h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.about-me-content-right pre {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.footer {
+  background-color: #020202c4;
+  color: red;
+}
+
+.credit {
+  background: #222;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem 1rem;
+  color: #aaa;
+}
+
+.credit span {
+  color: #29d9d5;
+}

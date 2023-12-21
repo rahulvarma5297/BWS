@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Module 8</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        background-color: black;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .table-container {
+        display: flex;
+        align-items: center;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 500px;
+        margin-right: 2rem;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      th,
+      td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 0, 0.733);
+        width: 50%;
+      }
+
+      th {
+        background-color: rgba(255, 255, 0, 0.733);
+        color: red;
+        font-weight: bold;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button {
+        margin-top: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 0, 0.733);
+        color: white;
+        font-size: 1rem;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: white;
+        color: red;
+      }
+
+      .picture {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Name</th>
+            <td id="name"></td>
+          </tr>
+          <tr>
+            <th>Height</th>
+            <td id="height"></td>
+          </tr>
+          <tr>
+            <th>ID</th>
+            <td id="pokeId"></td>
+          </tr>
+          <tr>
+            <th>Type</th>
+            <td id="type"></td>
+          </tr>
+        </table>
+        <div class="picture">
+          <img id="pic" src="" alt="Pokemon Picture" />
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="button">Get a New Character</button>
+      </div>
+    </div>
+
+    <script>
+      const characterButton = document.querySelector(".button");
+      const characterImage = document.getElementById("pic");
+
+      function fetchAndDisplayData() {
+        const randomNum = Math.ceil(Math.random() * 1000);
+        fetch(`https://pokeapi.co/api/v2/pokemon/${randomNum}`)
+          .then((response) => response.json())
+          .then((pokemon) => {
+            const pokeName = pokemon.name;
+            const pokeHeight = pokemon.height;
+            const pokeId = pokemon.id;
+            const pokeType = pokemon.types[0].type.name;
+
+            document.getElementById("name").innerText = pokeName;
+
+            const numToStr = pokeHeight.toString();
+            let newPokeHeight;
+
+            if (pokeHeight >= 10) {
+              newPokeHeight = numToStr.split("");
+              document.getElementById(
+                "height"
+              ).innerText = `${newPokeHeight[0]}.${newPokeHeight[1]} m`;
+            } else {
+              document.getElementById("height").innerText = `0.${pokeHeight} m`;
+            }
+
+            document.getElementById("pokeId").innerText = pokeId;
+            document.getElementById("type").innerText = pokeType;
+
+            characterImage.src =
+              pokemon.sprites.other["official-artwork"].front_default;
+          });
+      }
+
+      // Call the fetchAndDisplayData function on page load
+      window.addEventListener("load", fetchAndDisplayData);
+
+      // Call the fetchAndDisplayData function when the button is clicked
+      characterButton.addEventListener("click", fetchAndDisplayData);
+    </script>
+  </body>
+</html>
